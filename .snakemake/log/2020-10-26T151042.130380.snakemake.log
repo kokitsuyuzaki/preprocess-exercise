@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job counts:
+	count	jobs
+	1	all
+	1	mars_rmd
+	2
+
+[Mon Oct 26 15:10:42 2020]
+rule mars_rmd:
+    input: data/count.txt.gz, data/expdesign.txt.gz
+    output: results/mars_rmd.html
+    log: logs/mars_rmd.log
+    jobid: 8
+    benchmark: benchmarks/mars_rmd.txt
+
+[Mon Oct 26 15:13:40 2020]
+Finished job 8.
+1 of 2 steps (50%) done
+
+[Mon Oct 26 15:13:40 2020]
+localrule all:
+    input: results/mars.ipynb, results/mars.RData, results/mars.html, results/papermill_2.ipynb, results/papermill_3.ipynb, results/papermill_4.ipynb, results/papermill_5.ipynb, results/papermill_6.ipynb, results/mars_rmd.html
+    jobid: 0
+
+[Mon Oct 26 15:13:40 2020]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/log/2020-10-26T151042.130380.snakemake.log

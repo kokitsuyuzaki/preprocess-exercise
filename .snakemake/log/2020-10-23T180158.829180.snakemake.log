@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	mars_html
+	1	mars_nb
+	3
+
+[Fri Oct 23 18:01:58 2020]
+rule mars_html:
+    input: data/count.txt.gz, data/expdesign.txt.gz
+    output: results/mars.html
+    log: logs/mars_html.log
+    jobid: 2
+    benchmark: benchmarks/mars_html.txt
+
+
+[Fri Oct 23 18:01:58 2020]
+rule mars_nb:
+    input: data/count.txt.gz, data/expdesign.txt.gz
+    output: results/mars.ipynb, results/mars.RData
+    log: logs/mars_nb.log
+    jobid: 1
+    benchmark: benchmarks/mars_nb.txt
+
+[Fri Oct 23 18:05:30 2020]
+Finished job 2.
+1 of 3 steps (33%) done
+[Fri Oct 23 18:06:01 2020]
+Finished job 1.
+2 of 3 steps (67%) done
+
+[Fri Oct 23 18:06:01 2020]
+localrule all:
+    input: results/mars.ipynb, results/mars.RData, results/mars.html
+    jobid: 0
+
+[Fri Oct 23 18:06:01 2020]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/log/2020-10-23T180158.829180.snakemake.log

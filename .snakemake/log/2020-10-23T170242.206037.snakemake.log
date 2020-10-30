@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	mars_dl
+	2
+
+[Fri Oct 23 17:02:42 2020]
+rule mars_dl:
+    output: data/count.txt.gz, data/expdesign.txt.gz
+    log: logs/mars_dl.log
+    jobid: 1
+    benchmark: benchmarks/mars_dl.txt
+
+[Fri Oct 23 17:02:42 2020]
+Error in rule mars_dl:
+    jobid: 1
+    output: data/count.txt.gz, data/expdesign.txt.gz
+    log: logs/mars_dl.log (check log file(s) for error message)
+    shell:
+        src/mars_dl.sh
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/log/2020-10-23T170242.206037.snakemake.log

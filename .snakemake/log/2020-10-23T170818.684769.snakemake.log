@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	mars_html
+	1	mars_nb
+	3
+
+[Fri Oct 23 17:08:18 2020]
+rule mars_nb:
+    input: data/count.txt.gz, data/expdesign.txt.gz
+    output: results/mars.ipynb, results/mars.RData
+    log: logs/mars_nb.log
+    jobid: 1
+    benchmark: benchmarks/mars_nb.txt
+
+[Fri Oct 23 17:09:06 2020]
+Error in rule mars_nb:
+    jobid: 1
+    output: results/mars.ipynb, results/mars.RData
+    log: logs/mars_nb.log (check log file(s) for error message)
+    shell:
+        jupyter nbconvert --to notebook --execute --stdout notebooks/mars.ipynb --output results/mars.ipynb results/mars.RData
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/log/2020-10-23T170818.684769.snakemake.log

@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	mars
+	2
+
+[Thu Oct 22 16:32:43 2020]
+rule mars:
+    output: results/mars.RData
+    log: logs/mars.log, logs/mars.ipynb
+    jobid: 1
+    benchmark: benchmarks/mars.txt
+
+[Thu Oct 22 16:32:50 2020]
+Error in rule mars:
+    jobid: 1
+    output: results/mars.RData
+    log: logs/mars.log, logs/mars.ipynb (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 23 of /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile:
+Command 'set -euo pipefail;  jupyter-nbconvert --log-level ERROR --execute --output /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/logs/mars.ipynb --to notebook --ExecutePreprocessor.timeout=-1 /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/scripts/tmpwzy4n2ou.mars.ipynb' returned non-zero exit status 1.
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 2182, in run_wrapper
+  File "/Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile", line 23, in __rule_mars
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 551, in _callback
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 537, in cached_or_run
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 2239, in run_wrapper
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/log/2020-10-22T163235.911188.snakemake.log

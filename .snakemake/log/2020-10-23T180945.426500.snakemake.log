@@ -1,0 +1,3 @@
+NameError in line 60 of /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile:
+name 'dim' is not defined
+  File "/Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile", line 60, in <module>

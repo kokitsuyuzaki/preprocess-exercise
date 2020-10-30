@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	mars
+	2
+
+[Thu Oct 22 16:10:03 2020]
+rule mars:
+    output: results/mars.RData
+    log: logs/mars.log, logs/mars.ipynb
+    jobid: 1
+    benchmark: benchmarks/mars.txt
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 14 of /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+results/mars.RData
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 566, in handle_job_success
+  File "/Users/tsuyusakikouki/opt/anaconda3/envs/r-4.0/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 243, in handle_job_success
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/.snakemake/log/2020-10-22T161001.905029.snakemake.log

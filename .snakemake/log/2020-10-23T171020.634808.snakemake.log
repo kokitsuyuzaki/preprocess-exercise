@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	mars_html
+	1	mars_nb
+	3
+
+[Fri Oct 23 17:10:20 2020]
+rule mars_nb:
+    input: data/count.txt.gz, data/expdesign.txt.gz
+    output: results/mars.ipynb, results/mars.RData
+    log: logs/mars_nb.log
+    jobid: 1
+    benchmark: benchmarks/mars_nb.txt
+
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.
