@@ -5,7 +5,7 @@ Preprocessing tutorial for bioinformatics intermediate
 - Bash: GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19)
 - Anaconda: 4.9.0
 
-## Precedure to crate the conda environment
+## Precedure to create the conda environment
 
 ```bash
 conda create -y -n r-4.0 r=4.0
