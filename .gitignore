@@ -1,10 +1,11 @@
-**/.snakemake
+.snakemake
+data
 **/.cache
 **/.java
 **/data
 **/results
-**/logs
-**/benchmarks
+logs
+benchmarks
 **/*.out
 **/*.sh.*
 

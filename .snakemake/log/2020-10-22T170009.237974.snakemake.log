@@ -1,3 +1,0 @@
-CreateRuleException in line 18 of /Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile:
-The name mars_nb is already used by another rule
-  File "/Users/tsuyusakikouki/Desktop/elwood/Dev/preprocess-exercise/Snakefile", line 18, in <module>
