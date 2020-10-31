@@ -1,14 +1,13 @@
 # preprocess-exercise
-Preprocessing tutorial for bioinformatics beginners
+Preprocessing tutorial for bioinformatics intermediate
 
 ## Requirements in my environment
-- Bash: GNU bash, version 4.2.46(1)-release (x86_64-redhat-linux-gnu)
-- Snakemake: 5.14.0
-- Anaconda: 4.8.3
-- Singularity: 3.5.3
+- Bash: GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19)
+- Anaconda: 4.9.0
 
 ## Precedure to crate the conda environment
-```
+
+```bash
 conda create -y -n r-4.0 r=4.0
 conda activate r-4.0
 conda install -y -c conda-forge snakemake
@@ -35,5 +34,30 @@ conda install -y -c bioconda bioconductor-schex
 conda install -y -c bioconda bioconductor-isee
 conda install -y -c bioconda bioconductor-s4vectors
 R -e "IRkernel::installspec()"
+mkdir -p envs
 conda env export > envs/myenv.yaml
+```
+
+## How to perform the snakemake
+
+```bash
+snakemake --cores 1
+```
+
+## How to start R
+
+```bash
+R
+```
+
+## How to start Jupyter notebook
+
+```bash
+jupyter notebook
+```
+
+## How to start JupyterLab
+
+```bash
+jupyter lab
 ```
