@@ -8,17 +8,27 @@ Preprocessing tutorial for bioinformatics intermediate
 ## Precedure to create the conda environment
 
 ```bash
+conda create -n r-4.0 --file envs/myenv.yaml
+```
+
+`envs/myenv.yaml` was created by the following steps:
+
+```bash
 conda create -y -n r-4.0 r=4.0
 conda activate r-4.0
+conda config --add channels r
+conda config --add channels conda-forge
+conda config --add channels bioconda
 conda install -y -c conda-forge snakemake
 conda install -y -c conda-forge jupyter
 conda install -y -c conda-forge jupyterlab
-conda install -c r r-irkernel
 conda install -y -c conda-forge papermill
+conda install -y -c r r-irkernel
 conda install -y -c conda-forge r-tidyverse
 conda install -y -c conda-forge r-ggbeeswarm
 conda install -y -c conda-forge r-shiny
 conda install -y -c conda-forge r-plotly
+conda install -y -c conda-forge r-ggally
 conda install -y -c conda-forge r-pairsd3
 conda install -y -c conda-forge r-ggpairs
 conda install -y -c conda-forge r-rtsne
@@ -33,6 +43,7 @@ conda install -y -c bioconda bioconductor-scater
 conda install -y -c bioconda bioconductor-schex
 conda install -y -c bioconda bioconductor-isee
 conda install -y -c bioconda bioconductor-s4vectors
+conda install -y -c bioconda bioconductor-biocstyle
 R -e "IRkernel::installspec()"
 mkdir -p envs
 conda env export > envs/myenv.yaml

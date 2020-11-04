@@ -1,10 +1,7 @@
 .snakemake
 .ipynb_checkpoints
-.data
 .cache
 .java
-data
-results
 logs
 benchmarks
 *.out
