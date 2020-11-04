@@ -1,34 +1,12 @@
 source("src/functions.R")
 
 # Data loading
-# count <- read.table("data/count.txt.gz", row.names=1, header=TRUE, sep="\t")
-# expdesign <- read.table("data/expdesign.txt.gz", row.names=1, header=TRUE,
-# 	sep="\t", skip=6, stringsAsFactors = FALSE)
 count <- read_delim("data/count.txt.gz", delim="\t")
 expdesign <- read_delim("data/expdesign.txt.gz", delim="\t", skip=6)
 
 #################################################
 # Wide -> Long
 #################################################
-# Merge
-# Filtering non single-cells / zero count cells
-# count %>%
-# 	rownames_to_column("gene") %>%
-# 		pivot_longer(-gene, names_to="cell", values_to="exp") %>%
-# 			mutate(cell = str_replace(cell, "^X", "")) %>%
-# 				inner_join(expdesign,
-# 					by=c("cell"="Column_name_in_processed_data_file")) %>%
-# 					rename_all(tolower) %>%
-# 						group_by(cell) %>%
-# 							mutate(sum=sum(exp)) %>%
-# 									filter(sum != 0 &&
-# 										number_of_cells == 1 &&
-# 										group_name %in%
-# 											c("B cell", "CD8+pDC",
-# 												"monocyte_or_neutrophil", "NK_cell")) %>%
-# 											ungroup %>%
-# 												arrange(cell) -> marsdata
-
 count %>%
 	pivot_longer(-gene_name, names_to="cell", values_to="exp") %>%
 		inner_join(expdesign,
@@ -84,7 +62,7 @@ sce_marsdata %>%
 			runTSNE(dimred = "PCA") %>%
 				runUMAP(dimred = "PCA") -> sce_marsdata
 # save
-save(sce_marsdata, file="results/mars.RData")
+save.image("results/mars.RData")
 
 #################################################
 # Visualization
